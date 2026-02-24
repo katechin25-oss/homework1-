@@ -1,0 +1,155 @@
+/*
+Program name: style.css
+Author: Katherine Chin
+Date created: 02/24/2026
+Date last edited: 02/27/2026
+Version: 1.0
+Description: External stylesheet for patient-form.html - MIS3371 Homework 1
+*/
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #0a1628;
+  color: #e8f0fe;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #ffffff;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: #1a3a6b;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+td {
+  padding: 6px 10px;
+  vertical-align: top;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+  color: #4a90d9;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+a:visited {
+  color: #9b59b6;
+}
+
+label {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+textarea, input[type="text"], input[type="email"], input[type="password"], select {
+  border: 1px solid #1a3a6b;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 0.95em;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #f0f4ff;
+  color: #0a1628;
+}
+
+#header {
+  background-color: #0d1f3c;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 3px solid #1a3a6b;
+}
+
+#dateDisplay {
+  color: #a8c4e8;
+  font-size: 0.95em;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+#main {
+  padding: 20px 40px;
+  background-color: #ffffff;
+  color: #0a1628;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#footer {
+  background-color: #0d1f3c;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  margin-top: 30px;
+  border-top: 3px solid #1a3a6b;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#footer-left p {
+  margin: 2px 0;
+  font-size: 0.9em;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#footer-right {
+  font-size: 0.9em;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#footer-right a {
+  color: #a8c4e8;
+}
+
+#footer-right a:visited {
+  color: #7a9bc4;
+}
+
+.btn-row {
+  text-align: center;
+  padding-top: 15px;
+}
+
+input[type="submit"] {
+  background-color: #0d1f3c;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+input[type="submit"]:hover {
+  background-color: #1a3a6b;
+}
+
+input[type="reset"] {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+input[type="reset"]:hover {
+  background-color: #a00000;
+}
