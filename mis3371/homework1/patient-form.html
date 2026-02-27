@@ -13,7 +13,7 @@ Description: Patient registration form for MIS3371 Homework 1.
   <title>Patient Registration</title>
   <link href="style.css" rel="stylesheet">
 </head>
-<body> 
+<body>
 
 <!-- HEADER / BANNER -->
 <div id="header">
@@ -46,35 +46,98 @@ Description: Patient registration form for MIS3371 Homework 1.
     <!-- NAME -->
     <tr>
       <td><label for="fname">First Name:</label></td>
-      <td><input type="text" id="fname" name="fname" maxlength="30" required></td>
+      <td>
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          maxlength="30"
+          required
+        />
+      </td>
       <td><label for="mi">M.I.:</label></td>
-      <td><input type="text" id="mi" name="mi" maxlength="1" size="2"></td>
+      <td>
+        <input
+          type="text"
+          id="mi"
+          name="mi"
+          maxlength="1"
+          size="2"
+        />
+      </td>
       <td><label for="lname">Last Name:</label></td>
-      <td><input type="text" id="lname" name="lname" maxlength="30" required></td>
+      <td>
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          maxlength="30"
+          required
+        />
+      </td>
     </tr>
 
     <!-- DOB + SSN -->
     <tr>
       <td><label for="dob">Date of Birth:</label></td>
-      <td><input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" maxlength="10"></td>
+      <td>
+        <input
+          type="text"
+          id="dob"
+          name="dob"
+          placeholder="MM/DD/YYYY"
+          maxlength="10"
+        />
+      </td>
       <td><label for="ssn">Social Security #:</label></td>
-      <td><input type="password" id="ssn" name="ssn" maxlength="11" placeholder="XXX-XX-XXXX"></td>
+      <td>
+        <input
+          type="password"
+          id="ssn"
+          name="ssn"
+          maxlength="11"
+          placeholder="XXX-XX-XXXX"
+        />
+      </td>
     </tr>
 
     <!-- ADDRESS -->
     <tr>
       <td><label for="addr1">Address Line 1:</label></td>
-      <td colspan="3"><input type="text" id="addr1" name="addr1" maxlength="30" size="40"></td>
+      <td colspan="3">
+        <input
+          type="text"
+          id="addr1"
+          name="addr1"
+          maxlength="30"
+          size="40"
+        />
+      </td>
     </tr>
     <tr>
       <td><label for="addr2">Address Line 2:</label></td>
-      <td colspan="3"><input type="text" id="addr2" name="addr2" maxlength="30" size="40"></td>
+      <td colspan="3">
+        <input
+          type="text"
+          id="addr2"
+          name="addr2"
+          maxlength="30"
+          size="40"
+        />
+      </td>
     </tr>
 
     <!-- CITY STATE ZIP -->
     <tr>
       <td><label for="city">City:</label></td>
-      <td><input type="text" id="city" name="city" maxlength="30"></td>
+      <td>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          maxlength="30"
+        />
+      </td>
       <td><label for="state">State:</label></td>
       <td>
         <select id="state" name="state">
@@ -95,26 +158,56 @@ Description: Patient registration form for MIS3371 Homework 1.
         </select>
       </td>
       <td><label for="zip">Zip:</label></td>
-      <td><input type="text" id="zip" name="zip" maxlength="10" size="10"></td>
+      <td>
+        <input
+          type="text"
+          id="zip"
+          name="zip"
+          maxlength="10"
+          size="10"
+        />
+      </td>
     </tr>
 
     <!-- EMAIL -->
     <tr>
       <td><label for="email">Email Address:</label></td>
-      <td colspan="3"><input type="email" id="email" name="email" size="40"></td>
+      <td colspan="3">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          size="40"
+        />
+      </td>
     </tr>
 
     <!-- PHONE -->
     <tr>
       <td><label for="phone">Phone Number:</label></td>
-      <td><input type="text" id="phone" name="phone" maxlength="15" placeholder="XXX-XXX-XXXX"></td>
+      <td>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          maxlength="15"
+          placeholder="XXX-XXX-XXXX"
+        />
+      </td>
     </tr>
-    
+
     <!-- SYMPTOMS -->
     <tr>
       <td><label for="symptoms">Current Symptoms:</label></td>
-      <td colspan="5"><textarea id="symptoms" name="symptoms" rows="3" cols="50"
-        placeholder="Please describe your current symptoms..."></textarea></td>
+      <td colspan="5">
+        <textarea
+          id="symptoms"
+          name="symptoms"
+          rows="3"
+          cols="50"
+          placeholder="Please describe your current symptoms..."
+        ></textarea>
+      </td>
     </tr>
 
     <!-- CHECKBOXES -->
@@ -160,8 +253,15 @@ Description: Patient registration form for MIS3371 Homework 1.
     <tr>
       <td><label for="health">Health Rating (1–10):</label></td>
       <td colspan="5">
-        1 <input type="range" id="health" name="health" min="1" max="10" value="5"
-            oninput="document.getElementById('healthVal').textContent = this.value"> 10
+        1 <input
+            type="range"
+            id="health"
+            name="health"
+            min="1"
+            max="10"
+            value="5"
+            oninput="document.getElementById('healthVal').textContent = this.value"
+          /> 10
         &nbsp; Value: <span id="healthVal">5</span>
       </td>
     </tr>
@@ -169,17 +269,36 @@ Description: Patient registration form for MIS3371 Homework 1.
     <!-- USER ID -->
     <tr>
       <td><label for="userid">Desired User ID:</label></td>
-      <td><input type="text" id="userid" name="userid" maxlength="20"></td>
+      <td>
+        <input
+          type="text"
+          id="userid"
+          name="userid"
+          maxlength="20"
+        />
+      </td>
     </tr>
 
     <!-- PASSWORD -->
     <tr>
       <td><label for="pw">Password:</label></td>
-      <td><input type="password" id="pw" name="pw"></td>
+      <td>
+        <input
+          type="password"
+          id="pw"
+          name="pw"
+        />
+      </td>
     </tr>
     <tr>
       <td><label for="pw2">Re-enter Password:</label></td>
-      <td><input type="password" id="pw2" name="pw2"></td>
+      <td>
+        <input
+          type="password"
+          id="pw2"
+          name="pw2"
+        />
+      </td>
     </tr>
 
     <!-- BUTTONS -->
@@ -187,7 +306,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       <td colspan="6" class="btn-row">
         <input type="reset" value="CLEAR AND START OVER">
         &nbsp;&nbsp;&nbsp;
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="return checkPasswords()">
       </td>
     </tr>
 
@@ -209,6 +328,18 @@ Description: Patient registration form for MIS3371 Homework 1.
     <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
   </div>
 </div>
+
+<!-- PASSWORD MATCH CHECK -->
+<script>
+function checkPasswords() {
+  if (document.getElementById('pw').value !==
+      document.getElementById('pw2').value) {
+    alert('Passwords do not match! Please try again.');
+    return false;
+  }
+  return true;
+}
+</script>
 
 </body>
 <!-- END OF DOCUMENT: patient-form.html - Katherine Chin - MIS3371 Homework 1 -->
