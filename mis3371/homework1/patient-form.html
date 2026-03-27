@@ -15,9 +15,9 @@ Description: Patient registration form for MIS3371 Homework 1.
 </head>
 <body>
 
-<!-- HEADER / BANNER -->
+<!-- header and banner -->
 <div id="header">
-<img src="CHIN MEDICAL CENTER.png" alt="Chin Medical Center Logo" height="60">
+<img src="CHIN MEDICAL CENTER.png" height="60">
   <div>
     <h1>Chin Medical Center</h1>
     <p id="dateDisplay"></p>
@@ -37,13 +37,13 @@ Description: Patient registration form for MIS3371 Homework 1.
     `Today is: ${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}${suffix(now.getDate())}, ${now.getFullYear()}`;
 </script>
 
-<!-- MAIN FORM -->
+<!-- main part of form -->
 <div id="main">
   <h2>New Patient Registration</h2>
   <form action="thankyou.html">
   <table>
 
-    <!-- NAME -->
+    <!-- name -->
     <tr>
       <td><label for="fname">First Name:</label></td>
       <td>
@@ -77,7 +77,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- DOB + SSN -->
+    <!-- dob and ssn -->
     <tr>
       <td><label for="dob">Date of Birth:</label></td>
       <td>
@@ -101,7 +101,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- ADDRESS -->
+    <!-- address -->
     <tr>
       <td><label for="addr1">Address Line 1:</label></td>
       <td colspan="3">
@@ -127,7 +127,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- CITY STATE ZIP -->
+    <!-- location -->
     <tr>
       <td><label for="city">City:</label></td>
       <td>
@@ -169,7 +169,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- EMAIL -->
+    <!-- email -->
     <tr>
       <td><label for="email">Email Address:</label></td>
       <td colspan="3">
@@ -182,7 +182,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- PHONE -->
+    <!-- phone number -->
     <tr>
       <td><label for="phone">Phone Number:</label></td>
       <td>
@@ -196,7 +196,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- SYMPTOMS -->
+    <!-- symptoms -->
     <tr>
       <td><label for="symptoms">Current Symptoms:</label></td>
       <td colspan="5">
@@ -210,7 +210,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- CHECKBOXES -->
+    <!-- boxes -->
     <tr>
       <td colspan="6"><strong>Check all that apply — Have you had:</strong><br><br>
         <input type="checkbox" name="history" value="chickenpox"> Chicken Pox &nbsp;
@@ -221,7 +221,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- RADIO: Gender -->
+    <!-- gender -->
     <tr>
       <td><strong>Gender:</strong></td>
       <td colspan="5">
@@ -231,7 +231,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- RADIO: Vaccinated -->
+    <!-- vaccines -->
     <tr>
       <td><strong>Vaccinated?</strong></td>
       <td colspan="5">
@@ -240,7 +240,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- RADIO: Insurance -->
+    <!-- insurance -->
     <tr>
       <td><strong>Have Insurance?</strong></td>
       <td colspan="5">
@@ -249,7 +249,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- SLIDER -->
+    <!-- slider -->
     <tr>
       <td><label for="health">Health Rating (1–10):</label></td>
       <td colspan="5">
@@ -266,7 +266,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- USER ID -->
+    <!-- user id -->
     <tr>
       <td><label for="userid">Desired User ID:</label></td>
       <td>
@@ -279,7 +279,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- PASSWORD -->
+    <!-- password -->
     <tr>
       <td><label for="pw">Password:</label></td>
       <td>
@@ -301,7 +301,7 @@ Description: Patient registration form for MIS3371 Homework 1.
       </td>
     </tr>
 
-    <!-- BUTTONS -->
+    <!-- buttons -->
     <tr>
       <td colspan="6" class="btn-row">
         <input type="reset" value="CLEAR AND START OVER">
@@ -314,7 +314,7 @@ Description: Patient registration form for MIS3371 Homework 1.
   </form>
 </div>
 
-<!-- FOOTER -->
+<!-- footer -->
 <div id="footer">
   <div id="footer-left">
     <p>Chin Medical Center</p>
@@ -329,7 +329,7 @@ Description: Patient registration form for MIS3371 Homework 1.
   </div>
 </div>
 
-<!-- PASSWORD MATCH CHECK -->
+<!-- password match check -->
 <script>
 function checkPasswords() {
   if (document.getElementById('pw').value !==
