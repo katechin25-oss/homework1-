@@ -1,0 +1,239 @@
+/*
+  Program name: style.css
+  Author: Katherine Chin
+  Date created: 02/24/2026
+  Date last edited: 03/26/2026
+  Version: 2.0
+  Description: External stylesheet for patient-form.html - MIS3371 Homework 2.
+*/
+
+body {
+    background-color: rgb(13, 31, 60);
+    color: #e8f0fe;
+    margin: 0;
+    height: 100%;
+}
+
+h1, h2 {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+td {
+    padding: 6px 10px;
+    vertical-align: top;
+}
+
+th {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+label {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input, select, textarea {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+
+a {
+    color: #4a90d9;
+}
+
+a:visited {
+    color: #9b59b6;
+}
+
+.btn-row {
+    text-align: center;
+    padding-top: 12px;
+}
+
+//error message styling
+.err {
+    color: red;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+}
+
+#header {
+    background-color: rgb(13, 31, 60);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#dateDisplay {
+    color: #a8c4e8;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+#main {
+    padding: 20px 40px;
+    background-color: #ffffff;
+    color: rgb(13, 31, 60);
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(13, 31, 60);
+    color: #e8f0fe;
+    padding: 12px 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9rem;
+}
+
+#footer a {
+    color: #4a90d9;
+}
+
+#footer a:visited {
+    color: #9b59b6;
+}
+
+#footer button {
+    background-color: #1a3a6b;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#footer button:hover {
+    background-color: #2a5a9b;
+}
+
+input[type="submit"] {
+    background-color: rgb(13, 31, 60);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input[type="submit"]:hover {
+    background-color: #1a3a6b;
+}
+
+input[type="reset"] {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input[type="reset"]:hover {
+    background-color: #a00000;
+}
+
+button[type="button"] {
+    background-color: #1a6b3a;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button[type="button"]:hover {
+    background-color: #228b4a;
+}
+
+.pass-message {
+    text-align: right;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    position: relative;
+    left: 100px;
+    background: transparent;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: red;
+}
+
+#review {
+    margin-top: 5px;
+}
+
+table.output,
+tr.output,
+td.output {
+    width: 500px;
+    background-color: rgb(151, 162, 255);
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: black;
+}
+
+td.outputdata {
+    width: 500px;
+    background-color: rgb(0, 132, 255);
+    padding: 10px;
+    border-spacing: 2px;
+}
+
+/* review panel */
+#review-panel {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f4ff;
+    border: 2px solid rgb(13, 31, 60);
+    color: rgb(13, 31, 60);
+}
+
+#review-panel h3 {
+    font-family: Georgia, serif;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* review table */
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.95rem;
+}
+
+.review-table th {
+    background-color: rgb(13, 31, 60);
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+.review-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+.review-table tr:hover td {
+    background-color: #e0e8ff;
+}
+
+/* END OF DOCUMENT: style.css - Katherine Chin - MIS3371 Homework 2 */
