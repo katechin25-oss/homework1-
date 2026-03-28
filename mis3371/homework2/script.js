@@ -6,7 +6,7 @@
   Description: External JavaScript for patient-form.html - MIS3371 Homework 2.
 */
 
-// ---- SET DATE RANGE FOR DATE OF BIRTH ON PAGE LOAD ----
+// ---- set date of birth range ----
 window.onload = function() {
     var today = new Date();
 
@@ -32,7 +32,7 @@ window.onload = function() {
 };
 
 
-//range slider js code - updates pain label as user drags
+//range slider js code, updates pain label as user drags
 function updatePain(val) {
     var labels = {
         1: "No Pain", 2: "Very Mild", 3: "Mild", 4: "Moderate",
@@ -67,7 +67,7 @@ function liveUserIdCheck(input) {
         return;
     }
     document.getElementById('err-userid').innerHTML = "";
-}
+} 
 
 
 //validating password fields
@@ -127,7 +127,7 @@ function livePasswordCheck() {
 }
 
 
-//review button - collects all form data and displays with pass/error status
+//review button  
 function showReview() {
     var fname    = document.getElementById('fname').value;
     var mi       = document.getElementById('mi').value;
@@ -148,14 +148,14 @@ function showReview() {
     var pw2      = document.getElementById('pw2').value;
     var painDisp = document.getElementById('painDisplay').innerHTML;
 
-    // get checked checkboxes
+    // checked checkboxes
     var history = [];
     var checkboxes = document.querySelectorAll('input[name="history"]:checked');
     for (var i = 0; i < checkboxes.length; i++) {
         history.push(checkboxes[i].value);
     }
 
-    // get radio button values
+    // radio buttons
     var genderEl     = document.querySelector('input[name="gender"]:checked');
     var vaccinatedEl = document.querySelector('input[name="vaccinated"]:checked');
     var insuranceEl  = document.querySelector('input[name="insurance"]:checked');
@@ -209,7 +209,7 @@ function showReview() {
     html += reviewRow('Vaccinated?', vaccinated || '(blank)', vaccinated ? 'PASS' : 'ERROR: Please select yes or no.');
     html += reviewRow('Has Insurance?', insurance || '(blank)', insurance ? 'PASS' : 'ERROR: Please select yes or no.');
     html += reviewRow('Pain Level', painDisp, 'PASS');
-    html += reviewRow('Symptoms', symptoms || '(none)', symptoms.includes('"') ? 'ERROR: No double-quote characters allowed.' : 'PASS');
+    html += reviewRow('Symptoms', symptoms || '(none)', symptoms.includes('"') ? 'ERROR: No double-quote characters allowed' : 'PASS');
 
     // account info
     html += reviewRow('User ID', userid || '(blank)', checkUserId(userid));
