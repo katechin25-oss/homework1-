@@ -1,0 +1,70 @@
+<!--
+Program name: thankyou.html
+Author: Katherine Chin
+Date created: 02/24/2026
+Date last edited: 02/27/2026
+Version: 1.0
+Description: Thank you confirmation page after patient form submission.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You - Chin Medical Center</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header">
+  <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="30" cy="30" r="28" fill="white" stroke="#cce8ff" stroke-width="2"/>
+    <text x="30" y="36" text-anchor="middle" font-size="28" fill="#004a7c">+</text>
+  </svg>
+  <div>
+    <h1>Chin Medical Center</h1>
+    <p id="dateDisplay"></p>
+  </div>
+</div>
+
+<script>
+  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const months = ["January","February","March","April","May","June",
+                  "July","August","September","October","November","December"];
+  const now = new Date();
+  const suffix = (d) => {
+    if (d > 3 && d < 21) return "th";
+    switch (d % 10) { case 1: return "st"; case 2: return "nd"; case 3: return "rd"; default: return "th"; }
+  };
+  document.getElementById("dateDisplay").textContent =
+    `Today is: ${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}${suffix(now.getDate())}, ${now.getFullYear()}`;
+</script>
+
+<!-- MAIN -->
+<div id="main">
+  <h2>Thank You for Your Submission!</h2>
+  <p>We have received your registration. A member of our staff will be in touch shortly.</p>
+  <p>If you have any questions please contact us at
+    <a href="mailto:medicalstaff@chin.org">medicalstaff@chin.org</a>
+  </p>
+  <br>
+  <a href="patient-form.html">← Go Back to Registration Form</a>
+</div>
+
+<!-- FOOTER -->
+<div id="footer">
+  <div id="footer-left">
+    <p>Chin Medical Center</p>
+    <p>PO Box 18881</p>
+    <p>Fort Worth, TX 76128</p>
+  </div>
+  <div id="footer-mid">
+    <button onclick="alert('Contact us at medicalstaff@chin.org')">Contact Us</button>
+  </div>
+  <div id="footer-right">
+    <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+  </div>
+</div>
+
+</body>
+</html>
