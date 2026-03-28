@@ -167,8 +167,8 @@ Description: Patient registration form for MIS3371 Homework 2.
       <td><label for="symptoms">Current Symptoms:</label></td>
       <td colspan="5">
         <textarea id="symptoms" name="symptoms" rows="3" cols="50"
-          placeholder='Describe your symptoms. No double-quote (") characters allowed.'
-          title='Please describe your current symptoms. Do not use double-quote characters.'
+          placeholder='Describe your symptoms.'
+          title='Please describe your current symptoms.'
         ></textarea>
         <span class="err" id="err-symptoms"></span>
       </td>
@@ -232,7 +232,7 @@ Description: Patient registration form for MIS3371 Homework 2.
       <td><label for="userid">Desired User ID:</label></td>
       <td colspan="2">
         <input type="text" id="userid" name="userid" maxlength="30" required
-          title="User ID: 5 to 30 characters. Must start with a letter. Letters, numbers, underscores and dashes only. No spaces. Will be saved as lowercase."
+          title="User ID: 5 to 30 characters. Must start with a letter. Letters, numbers, underscores and dashes only. No spaces."
           oninput="liveUserIdCheck(this)" />
         <span class="err" id="err-userid"></span>
       </td>
@@ -243,7 +243,7 @@ Description: Patient registration form for MIS3371 Homework 2.
       <td><label for="pw">Password:</label></td>
       <td colspan="2">
         <input type="password" id="pw" name="pw" maxlength="30" required
-          title="Password: 8 to 30 characters. Must have at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character. No double-quotes allowed."
+          title="Password: 8 to 30 characters. Must have at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character."
           oninput="livePasswordCheck()" />
         <span class="err" id="err-pw"></span>
       </td>
