@@ -1,0 +1,276 @@
+<!--
+Program name: homework3.html
+Author: Katherine Chin
+Date created: 02/24/2026
+Date last edited: 04/17/2026
+Version: 3.0
+Description: Patient registration form for MIS3371 Homework 3.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Registration - Homework 3</title>
+  <link href="homework3.css" rel="stylesheet">
+</head>
+<body>
+<div id="header">
+  <img src="CHIN MEDICAL CENTER.png" height="60" alt="Chin Medical Center logo">
+  <div>
+    <h1>Chin Medical Center</h1>
+    <p id="dateDisplay"></p>
+  </div>
+</div>
+
+
+<div id="main">
+  <h2>New Patient Registration</h2>
+  <form id="regForm" novalidate>
+    <table>
+      <tr><td colspan="6"><strong>--- Personal Information ---</strong></td></tr>
+
+
+      <tr>
+        <td><label for="fname">First Name:</label></td>
+        <td>
+          <input type="text" id="fname" name="fname" maxlength="30" minlength="1" required
+            pattern="[A-Za-z'\-]{1,30}"
+            title="First name: 1 to 30 characters. Letters, apostrophes, and dashes only.">
+          <div class="err-slot"><span class="err" id="err-fname"></span></div>
+        </td>
+        <td><label for="mi">M.I.:</label></td>
+        <td>
+          <input type="text" id="mi" name="mi" maxlength="1" pattern="[A-Za-z]"
+            title="Middle initial: optional. If entered, one letter only.">
+          <div class="err-slot"><span class="err" id="err-mi"></span></div>
+        </td>
+        <td><label for="lname">Last Name:</label></td>
+        <td>
+          <input type="text" id="lname" name="lname" maxlength="30" minlength="1" required
+            pattern="[A-Za-z'\-]{1,30}"
+            title="Last name: 1 to 30 characters. Letters, apostrophes, and dashes only.">
+          <div class="err-slot"><span class="err" id="err-lname"></span></div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td><label for="dob">Date of Birth:</label></td>
+        <td>
+          <input type="date" id="dob" name="dob" required
+            title="Date of birth: must be real, not in future, and not more than 120 years ago.">
+          <div class="err-slot"><span class="err" id="err-dob"></span></div>
+        </td>
+        <td><label for="ssn">Social Security #:</label></td>
+        <td>
+          <input type="password" id="ssn" name="ssn" maxlength="11" placeholder="XXX-XX-XXXX" required
+            pattern="\d{3}-\d{2}-\d{4}"
+            title="Social Security number: 9 digits. It auto-formats as XXX-XX-XXXX.">
+          <div class="err-slot"><span class="err" id="err-ssn"></span></div>
+        </td>
+      </tr>
+
+
+      <tr><td colspan="6"><strong>--- Contact Information ---</strong></td></tr>
+      <tr>
+        <td><label for="email">Email Address:</label></td>
+        <td colspan="3">
+          <input type="email" id="email" name="email" size="40" required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            title="Email must be in format name@domain.tld">
+          <div class="err-slot"><span class="err" id="err-email"></span></div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td><label for="phone">Phone Number:</label></td>
+        <td>
+          <input type="text" id="phone" name="phone" maxlength="12" placeholder="000-000-0000" required
+            pattern="\d{3}-\d{3}-\d{4}"
+            title="Phone number must be in format 000-000-0000.">
+          <div class="err-slot"><span class="err" id="err-phone"></span></div>
+        </td>
+      </tr>
+
+
+      <tr><td colspan="6"><strong>--- Address ---</strong></td></tr>
+      <tr>
+        <td><label for="addr1">Address Line 1:</label></td>
+        <td colspan="3">
+          <input type="text" id="addr1" name="addr1" maxlength="30" minlength="2" size="40" required
+            title="Address line 1: required, 2 to 30 characters.">
+          <div class="err-slot"><span class="err" id="err-addr1"></span></div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="addr2">Address Line 2:</label></td>
+        <td colspan="3">
+          <input type="text" id="addr2" name="addr2" maxlength="30" size="40"
+            title="Address line 2: optional. If entered, 2 to 30 characters.">
+          <div class="err-slot"><span class="err" id="err-addr2"></span></div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td><label for="city">City:</label></td>
+        <td>
+          <input type="text" id="city" name="city" maxlength="30" minlength="2" required
+            title="City: required, 2 to 30 characters.">
+          <div class="err-slot"><span class="err" id="err-city"></span></div>
+        </td>
+        <td><label for="state">State:</label></td>
+        <td>
+          <select id="state" name="state" required title="Choose a state.">
+            <option value="">-- Select --</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+            <option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+            <option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+            <option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+            <option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+            <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+            <option>WI</option><option>WY</option><option>DC</option><option>PR</option>
+          </select>
+          <div class="err-slot"><span class="err" id="err-state"></span></div>
+        </td>
+        <td><label for="zip">Zip:</label></td>
+        <td>
+          <input type="text" id="zip" name="zip" maxlength="5" size="10" required pattern="\d{5}"
+            title="Zip code: exactly 5 digits.">
+          <div class="err-slot"><span class="err" id="err-zip"></span></div>
+        </td>
+      </tr>
+
+
+      <tr><td colspan="6"><strong>--- Medical History ---</strong></td></tr>
+      <tr>
+        <td><label for="symptoms">Current Symptoms:</label></td>
+        <td colspan="5">
+          <textarea id="symptoms" name="symptoms" rows="3" cols="50"
+            placeholder="Describe your symptoms."
+            title="Briefly describe your symptoms."></textarea>
+          <div class="err-slot"><span class="err" id="err-symptoms"></span></div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td colspan="6"><strong>Check all that apply — Have you had:</strong><br><br>
+          <label><input type="checkbox" name="history" value="chickenpox"> Chicken Pox</label>
+          <label><input type="checkbox" name="history" value="measles"> Measles</label>
+          <label><input type="checkbox" name="history" value="covid"> Covid-19</label>
+          <label><input type="checkbox" name="history" value="smallpox"> Small Pox</label>
+          <label><input type="checkbox" name="history" value="tetanus"> Tetanus</label>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td><strong>Gender:</strong></td>
+        <td colspan="5">
+          <label><input type="radio" name="gender" value="male"> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+          <div class="err-slot"><span class="err" id="err-gender"></span></div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td><strong>Vaccinated?</strong></td>
+        <td colspan="5">
+          <label><input type="radio" name="vaccinated" value="yes"> Yes</label>
+          <label><input type="radio" name="vaccinated" value="no"> No</label>
+          <label><input type="radio" name="vaccinated" value="unsure"> Unsure</label>
+          <div class="err-slot"><span class="err" id="err-vaccinated"></span></div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td><strong>Have Insurance?</strong></td>
+        <td colspan="5">
+          <label><input type="radio" name="insurance" value="yes"> Yes</label>
+          <label><input type="radio" name="insurance" value="no"> No</label>
+          <label><input type="radio" name="insurance" value="unsure"> Unsure</label>
+          <div class="err-slot"><span class="err" id="err-insurance"></span></div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td><label for="pain">Pain Level (1-10):</label></td>
+        <td colspan="5">
+          1 <input type="range" id="pain" name="pain" min="1" max="10" value="1"
+            title="Rate pain level from 1 to 10."> 10
+          &nbsp; Current: <span id="painDisplay"><strong>1 - No Pain</strong></span>
+        </td>
+      </tr>
+
+
+      <tr><td colspan="6"><strong>--- Account Setup ---</strong></td></tr>
+      <tr>
+        <td><label for="userid">Desired User ID:</label></td>
+        <td colspan="2">
+          <input type="text" id="userid" name="userid" maxlength="20" minlength="5" required
+            title="5-20 chars, cannot start with number, letters/numbers/dash/underscore only.">
+          <div class="err-slot"><span class="err" id="err-userid"></span></div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="pw">Password:</label></td>
+        <td colspan="2">
+          <input type="password" id="pw" name="pw" maxlength="30" required
+            title="At least 8 chars, includes uppercase, lowercase, and number, and cannot equal User ID.">
+          <div class="err-slot"><span class="err" id="err-pw"></span></div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="pw2">Re-enter Password:</label></td>
+        <td colspan="2">
+          <input type="password" id="pw2" name="pw2" maxlength="30" required
+            title="Must match the password exactly.">
+          <div class="err-slot"><span class="err" id="err-pw2"></span></div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td colspan="6" class="btn-row">
+          <input type="reset" id="resetBtn" value="CLEAR AND START OVER">
+          <button type="button" id="reviewBtn">REVIEW</button>
+          <button type="button" id="validateBtn">VALIDATE</button>
+          <button type="submit" id="submitBtn" style="display:none;">SUBMIT</button>
+          <div class="err-slot centered"><span class="err ok" id="validate-status"></span></div>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+
+  <div id="review-panel" style="display:none;">
+    <h3>--- Please Review Your Information ---</h3>
+    <div id="review-content"></div>
+  </div>
+</div>
+
+
+<div id="footer">
+  <div id="footer-left">
+    <p>Chin Medical Center</p>
+    <p>PO Box 18881</p>
+    <p>Fort Worth, TX 76128</p>
+  </div>
+  <div id="footer-mid">
+    <button type="button" onclick="alert('Contact us at medicalstaff@chin.org')">Contact Us</button>
+  </div>
+  <div id="footer-right">
+    <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+  </div>
+</div>
+
+
+<script src="homework3.js"></script>
+</body>
+</html>
