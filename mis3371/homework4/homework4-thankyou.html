@@ -1,0 +1,89 @@
+
+<!--
+Program name: homework4-thankyou.html
+Author: Katherine Chin
+Date created: 05/07/2026
+Date last edited: 05/07/2026
+Version: 4.0
+Description: Thank you confirmation page after patient form submission for Homework 4
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You - Chin Medical Center</title>
+  <link href="homework4.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- FIXED HEADER -->
+<div id="header">
+  <img src="CHIN MEDICAL CENTER.png" height="60" alt="Chin Medical Center logo">
+  <div>
+    <h1>Chin Medical Center</h1>
+    <p id="dateDisplay"></p>
+    <p id="welcomeMsg"></p>
+  </div>
+</div>
+
+<div id="header-spacer"></div>
+
+<div id="main">
+  <h2>Thank You for Your Submission!</h2>
+  <p>We have received your registration. A member of our staff will be in touch shortly.</p>
+  <p>If you have any questions please contact us at
+    <a href="mailto:medicalstaff@chin.org">medicalstaff@chin.org</a>
+  </p>
+  <br>
+  <a href="homework4.html">← Go Back to Registration Form</a>
+</div>
+
+<!-- FIXED FOOTER -->
+<div id="footer">
+  <div id="footer-left">
+    <p>Chin Medical Center</p>
+    <p>PO Box 18881</p>
+    <p>Fort Worth, TX 76128</p>
+  </div>
+  <div id="footer-mid">
+    <button onclick="alert('Contact us at medicalstaff@chin.org')">Contact Us</button>
+  </div>
+  <div id="footer-right">
+    <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+  </div>
+</div>
+
+<div id="footer-spacer"></div>
+
+<script>
+  // Set the date display
+  var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var now = new Date();
+  var d = now.getDate();
+  var suffix = "th";
+  if (!(d > 3 && d < 21)) {
+      suffix = ["th","st","nd","rd"][Math.min(d % 10, 3)];
+  }
+  document.getElementById("dateDisplay").textContent =
+      "Today is: " + days[now.getDay()] + ", " + months[now.getMonth()] + " " + d + suffix + ", " + now.getFullYear();
+
+  // Show welcome message from cookie if it exists
+  function getCookie(name) {
+      var cookies = document.cookie.split(";");
+      for (var i = 0; i < cookies.length; i++) {
+          var c = cookies[i].trim();
+          if (c.indexOf(name + "=") === 0) {
+              return c.substring((name + "=").length);
+          }
+      }
+      return "";
+  }
+  var savedName = getCookie("hw4_firstname");
+  if (savedName) {
+      document.getElementById("welcomeMsg").textContent = "Welcome back, " + savedName + "!";
+  }
+</script>
+</body>
+</html>
