@@ -1,0 +1,434 @@
+/*
+  Program name: homework4.css
+  Author: Katherine Chin
+  Date created: 05/06/2026
+  Date last edited: 05/06/2026
+  Version: 4.0
+  Description: homework4.css for Homework 4
+*/
+
+/* ===== base style ===== */
+body {
+    background-color: rgb(13, 31, 60);
+    color: #e8f0fe;
+    margin: 0;
+    height: 100%;
+
+    animation: pageFadeIn 0.8s ease-in;
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+h1, h2 {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    font-family: "Times New Roman", Times, serif;
+}
+
+td {
+    padding: 6px 10px;
+    vertical-align: top;
+}
+
+label, input, select, textarea, p {
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+/* ===== header ===== */
+/* keeps it stuck to the top when scrolling */
+#header {
+    background-color: rgb(13, 31, 60);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* pushes main content down so it doesnt hide under the fixed header */
+#header-spacer {
+    height: 110px;
+}
+
+#dateDisplay {
+    color: #a8c4e8;
+    margin-right: 5px;
+    margin: 0;
+}
+
+#welcomeMsg {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 4px 0 0 0;
+
+    /* welcome message slides down */
+    animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===== the main content ===== */
+#main {
+    padding: 20px 40px;
+    background-color: #ffffff;
+    color: rgb(13, 31, 60);
+}
+
+
+/* ===== notice for new users ===== */
+#new-user-notice {
+    background-color: #fff8e1;
+    border: 1px solid #f0c040;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+    font-family: "Times New Roman", Times, serif;
+    color: rgb(13, 31, 60);
+
+    /* slides in from top */
+    animation: slideDown 0.5s ease-out;
+}
+
+/* ===== remember me row ===== */
+#remember-me-row {
+    background-color: #eef3ff;
+    border: 1px solid #b0c4de;
+    padding: 8px 16px;
+    margin-bottom: 12px;
+    font-family: "Times New Roman", Times, serif;
+    color: rgb(13, 31, 60);
+}
+
+
+/* ===== iframe part ===== */
+#iframe-section {
+    margin-bottom: 20px;
+    border: 2px solid rgb(13, 31, 60);
+    padding: 10px;
+    background-color: #f0f4ff;
+}
+
+#iframe-section p {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+    color: rgb(13, 31, 60);
+}
+
+#healthFrame {
+    border: 1px solid #ccc;
+    display: block;
+}
+
+
+/* ===== buttons ===== */
+.btn-row {
+    text-align: center;
+    padding-top: 12px;
+}
+
+input[type="submit"],
+button#validateBtn {
+    background-color: rgb(13, 31, 60);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+input[type="submit"]:hover,
+button#validateBtn:hover {
+    background-color: #1a3a6b;
+}
+
+input[type="reset"] {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+input[type="reset"]:hover {
+    background-color: #a00000;
+}
+
+button#reviewBtn {
+    background-color: #1a6b3a;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button#reviewBtn:hover {
+    background-color: #228b4a;
+}
+
+
+/* ===== error styles ===== */
+.err-slot {
+    min-height: 18px;
+    margin-top: 2px;
+}
+
+/* error messages fade in */
+.err {
+    color: #b30000;
+    font-size: 12px;
+    display: inline-block;
+    animation: errFadeIn 0.3s ease-in;
+}
+
+@keyframes errFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.ok {
+    color: #0f6b2f;
+    font-weight: bold;
+}
+
+.centered {
+    text-align: center;
+}
+
+
+/* ===== review panel ===== */
+#review-panel {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f4ff;
+    border: 2px solid rgb(13, 31, 60);
+    color: rgb(13, 31, 60);
+
+    /* review panel fades in */
+    animation: pageFadeIn 0.4s ease-in;
+}
+
+#review-panel h3 {
+    font-family: Georgia, serif;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.review-table th {
+    background-color: rgb(13, 31, 60);
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+.review-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* ===== fixed footer ===== */
+/* fixed keeps footer stuck to the bottom when scrolling */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(13, 31, 60);
+    color: #e8f0fe;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* pushes content up so it doesnt hide under the footer */
+#footer-spacer {
+    height: 70px;
+}
+
+#footer a {
+    color: #4a90d9;
+}
+
+#footer a:visited {
+    color: #9b59b6;
+}
+
+#footer button {
+    background-color: #1a3a6b;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#footer button:hover {
+    background-color: #2a4a8b;
+}
+
+
+/* ===== chat bubble ===== */
+#chat-bubble {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+    background-color: rgb(13, 31, 60);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 52px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 200;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+    /* gentle pulse movement */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(13, 31, 60, 0.6); }
+    70%  { box-shadow: 0 0 0 10px rgba(13, 31, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(13, 31, 60, 0); }
+}
+
+/* chat popup box */
+#chat-box {
+    position: fixed;
+    bottom: 145px;
+    right: 24px;
+    width: 320px;
+    background-color: white;
+    border: 2px solid rgb(13, 31, 60);
+    z-index: 200;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    font-family: "Times New Roman", Times, serif;
+
+    /* chat box slides up when it opens */
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+#chat-header {
+    background-color: rgb(13, 31, 60);
+    color: white;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+#chat-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+}
+
+#chat-messages {
+    height: 220px;
+    overflow-y: auto;
+    padding: 10px;
+    color: rgb(13, 31, 60);
+    font-size: 0.9rem;
+}
+
+/* individual chat bubbles */
+.chat-msg {
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    max-width: 85%;
+
+    /* each message fades in */
+    animation: errFadeIn 0.3s ease-in;
+}
+
+.chat-msg.user {
+    background-color: #e8f0fe;
+    margin-left: auto;
+    text-align: right;
+    border: 1px solid #b0c4de;
+}
+
+.chat-msg.bot {
+    background-color: #f0f4ff;
+    border: 1px solid #ccd8f0;
+}
+
+.chat-msg.thinking {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    color: #888;
+    font-style: italic;
+}
+
+#chat-input-row {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#chat-input-row button {
+    background-color: rgb(13, 31, 60);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    transition: background-color 0.2s ease;
+}
+
+#chat-input-row button:hover {
+    background-color: #1a3a6b;
+}
