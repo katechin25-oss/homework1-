@@ -2,14 +2,14 @@
   Program name: homework4.js
   Author: Katherine Chin
   Date created: 05/06/2026
-  Date last edited: 05/06/2026
+  Date last edited: 05/08/2026
   Version: 4.0
   Description: JavaScript for Homework 4.
 */
 
 
 /* ============================================================
-   HELPER FUNCTIONS (same as homework3)
+   helper functions
    ============================================================ */
 
 function el(id) {
@@ -28,8 +28,8 @@ function trimVal(id) {
 
 /* ============================================================
    FETCH API
-   Loads states from states.txt and fills the state dropdown.
-   Uses try/catch so if the file fails, a fallback message shows.
+   Uses states from states.txt and fills the state dropdown.
+   Uses try/catch if the file fails so a fallback message shows.
    ============================================================ */
 
 function loadStates() {
@@ -64,9 +64,7 @@ function loadStates() {
 
 
 /* ============================================================
-   COOKIE FUNCTIONS
-   Simple helpers to set, get, and delete a cookie by name.
-   Cookie expires in 48 hours as professor requested.
+   Cookies
    ============================================================ */
 
 function setCookie(name, value) {
@@ -94,9 +92,9 @@ function deleteCookie(name) {
 
 
 /* ============================================================
-   LOCAL STORAGE FUNCTIONS
-   Save and load non-sensitive form fields.
-   SSN and password are NOT saved (those are secure/sensitive).
+   Local storage functions
+   Save and load form fields.
+   SSN and password arent saved (secure/sensitive).
    ============================================================ */
 
 function saveToLocalStorage() {
@@ -205,9 +203,9 @@ function clearLocalStorage() {
 
 
 /* ============================================================
-   COOKIE + LOCAL STORAGE ON PAGE LOAD
-   Check if user has been here before using the cookie.
-   If yes: show welcome back message, load their saved data.
+   cookies + local storage on page load
+   Check if user has been here before.
+   If yes: show welcome back message and load their saved data.
    If no: show welcome new user message.
    ============================================================ */
 
@@ -233,9 +231,9 @@ function checkCookieOnLoad() {
 
 
 /* ============================================================
-   "NOT ME" CHECKBOX
+   not me checkbox
    If the user says it is not them, delete cookie and local
-   storage so they start fresh as a new user.
+   storage so they start new as a new user.
    ============================================================ */
 
 function setupNotMeCheckbox() {
@@ -259,9 +257,9 @@ function setupNotMeCheckbox() {
 
 
 /* ============================================================
-   REMEMBER ME CHECKBOX
-   If unchecked on submit, expire cookie and clear local data.
-   If checked, save the cookie and local data.
+   remember me checkbox
+   If it is unchecked on submit, expire cookie and clear local data.
+   If it is checked, save the cookie and local data.
    ============================================================ */
 
 function handleRememberMe(firstName) {
@@ -277,9 +275,9 @@ function handleRememberMe(firstName) {
 
 
 /* ============================================================
-   BIND LOCAL STORAGE SAVES ON BLUR
+   bind local storage saves
    Save each field to local storage when user leaves that field.
-   This way data is saved as they fill in the form.
+   Because of this data is saved as they fill in the form.
    ============================================================ */
 
 function bindLocalStorageSaves() {
@@ -311,7 +309,7 @@ function bindLocalStorageSaves() {
 
 
 /* ============================================================
-   DATE AND HEADER SETUP (same as homework3)
+   date and headers
    ============================================================ */
 
 function setupDateAndHeader() {
@@ -334,7 +332,7 @@ function setupDateAndHeader() {
 
 
 /* ============================================================
-   PAIN LABEL (same as homework3)
+   pain label
    ============================================================ */
 
 function updatePainLabel(value) {
@@ -347,7 +345,7 @@ function updatePainLabel(value) {
 
 
 /* ============================================================
-   FORMAT HELPER (same as homework3)
+   Format helper
    ============================================================ */
 
 function formatDashedNumber(rawDigits, cuts) {
@@ -363,7 +361,7 @@ function formatDashedNumber(rawDigits, cuts) {
 
 
 /* ============================================================
-   VALIDATION FUNCTIONS (same as homework3)
+   Validation Functions
    ============================================================ */
 
 function validateName(id, label) {
@@ -521,7 +519,7 @@ function validateAll() {
 
 
 /* ============================================================
-   VALIDATE STATUS DISPLAY (same as homework3)
+   status display validation
    ============================================================ */
 
 function showValidateState(isValid) {
@@ -540,7 +538,7 @@ function showValidateState(isValid) {
 
 
 /* ============================================================
-   REVIEW PANEL (same as homework3)
+   review panel
    ============================================================ */
 
 function reviewRow(label, value) {
@@ -580,7 +578,7 @@ function showReview() {
 
 
 /* ============================================================
-   CLEAR FORM UI (same as homework3)
+   Clear form UI
    ============================================================ */
 
 function clearFormUi() {
@@ -595,7 +593,7 @@ function clearFormUi() {
 
 
 /* ============================================================
-   LIVE VALIDATION BINDING (same as homework3)
+   Live validation binding
    ============================================================ */
 
 function bindLiveValidation() {
@@ -629,88 +627,6 @@ function bindLiveValidation() {
 
 
 /* ============================================================
-   EXTRA CREDIT: AI CHAT BUBBLE
-   Sends user message to Claude AI API and shows the response.
-   The AI is given a system prompt so it stays focused on
-   helping users fill out this medical registration form.
-   ============================================================ */
-
-function toggleChat() {
-    var box = el("chat-box");
-    if (box.style.display === "none") {
-        box.style.display = "block";
-        // Show a greeting when first opened if no messages yet
-        if (el("chat-messages").children.length === 0) {
-            addChatMessage("bot", "Hello! I am the Chin Medical Center assistant. I can help you fill out this registration form. What do you need help with?");
-        }
-        el("chat-input").focus();
-    } else {
-        box.style.display = "none";
-    }
-}
-
-function addChatMessage(type, text) {
-    var div = document.createElement("div");
-    div.className = "chat-msg " + type;
-    div.textContent = text;
-    el("chat-messages").appendChild(div);
-    // Scroll to the bottom so newest message is visible
-    el("chat-messages").scrollTop = el("chat-messages").scrollHeight;
-    return div;
-}
-
-function sendChat() {
-    var input = el("chat-input");
-    var userText = input.value.trim();
-    if (!userText) { return; }
-
-    // Show the user's message
-    addChatMessage("user", userText);
-    input.value = "";
-
-    // Show a "thinking" placeholder while waiting for AI response
-    var thinkingDiv = addChatMessage("thinking", "Thinking...");
-
-    // Call the Anthropic AI API
-    fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            model: "claude-sonnet-4-20250514",
-            max_tokens: 1000,
-            system: "You are a helpful assistant for Chin Medical Center. Your job is to help patients fill out their online registration form. The form collects: first name, middle initial, last name, date of birth, social security number, email, phone number, address, city, state, zip code, current symptoms, medical history (chicken pox, measles, covid-19, smallpox, tetanus), gender, vaccination status, insurance status, pain level (1-10), desired user ID, and password. Only answer questions related to filling out this form or general medical registration questions. Keep your answers short and friendly. Do not give medical advice.",
-            messages: [
-                { role: "user", content: userText }
-            ]
-        })
-    })
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        // Remove the thinking placeholder
-        thinkingDiv.remove();
-
-        // Get the AI text response
-        var reply = "";
-        if (data.content && data.content[0] && data.content[0].text) {
-            reply = data.content[0].text;
-        } else {
-            reply = "Sorry, I could not get a response. Please try again.";
-        }
-        addChatMessage("bot", reply);
-    })
-    .catch(function(error) {
-        thinkingDiv.remove();
-        addChatMessage("bot", "Sorry, there was a connection error. Please try again.");
-        console.log("Chat error: " + error);
-    });
-}
-
-
-/* ============================================================
    WINDOW ON LOAD
    Runs everything when the page first loads.
    ============================================================ */
@@ -735,7 +651,6 @@ window.onload = function() {
     // Bind live validation
     bindLiveValidation();
 
-
     // VALIDATE button
     el("validateBtn").addEventListener("click", function() {
         showValidateState(validateAll());
@@ -758,13 +673,6 @@ window.onload = function() {
             // Handle remember me cookie and local storage
             handleRememberMe(trimVal("fname"));
             window.location.href = "homework4-thankyou.html";
-        }
-    });
-
-    // CHAT: allow pressing Enter key in chat input to send
-    el("chat-input").addEventListener("keydown", function(e) {
-        if (e.key === "Enter") {
-            sendChat();
         }
     });
 
