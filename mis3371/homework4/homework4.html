@@ -3,7 +3,7 @@
 Program name: homework4.html
 Author: Katherine Chin
 Date created: 05/05/2026
-Date last edited: 05/05/2026
+Date last edited: 05/08/2026
 Version: 4.0
 Description: Patient registration form for Homework 4
 -->
@@ -17,20 +17,19 @@ Description: Patient registration form for Homework 4
 </head>
 <body>
 
-<!-- fixed header with iframe -->
-<!-- The header div stays fixed at the top so it never scrolls away -->
+<!-- fixed header -->
+<!-- the header div stays fixed at the top so it never scrolls away -->
 <div id="header">
   <img src="CHIN MEDICAL CENTER.png" height="60" alt="Chin Medical Center logo">
   <div>
     <h1>Chin Medical Center</h1>
     <p id="dateDisplay"></p>
-    <!-- Welcome message shows here based on cookie -->
+    <!-- welcome message shows here based on cookie -->
     <p id="welcomeMsg"></p>
   </div>
 </div>
 
-
-<!-- spacer -->
+<!-- spacer so content doesnt hide under fixed header -->
 <div id="header-spacer"></div>
 
 
@@ -54,7 +53,7 @@ Description: Patient registration form for Homework 4
 
   <h2>New Patient Registration</h2>
 
-  <!-- shows CDC health info -->
+  <!-- iframe shows CDC health info -->
   <div id="iframe-section">
     <p><strong>Health Resource:</strong> CDC Health Information</p>
     <iframe
@@ -157,7 +156,7 @@ Description: Patient registration form for Homework 4
         </td>
         <td><label for="state">State:</label></td>
         <td>
-          <!-- State dropdown is populated by Fetch API from states.txt -->
+          <!-- state dropdown is populated by Fetch API from states.txt -->
           <select id="state" name="state" required title="Choose a state.">
             <option value="">-- Loading... --</option>
           </select>
@@ -276,7 +275,7 @@ Description: Patient registration form for Homework 4
 </div>
 
 
-<!-- fixed footer  -->
+<!-- fixed footer -->
 <div id="footer">
   <div id="footer-left">
     <p>Chin Medical Center</p>
@@ -293,23 +292,6 @@ Description: Patient registration form for Homework 4
 
 <!-- spacer so content doesnt hide under fixed footer -->
 <div id="footer-spacer"></div>
-
-
-<!-- chat bubble -->
-<div id="chat-bubble" onclick="toggleChat()">?</div>
-
-<div id="chat-box" style="display:none;">
-  <div id="chat-header">
-    <span>Chin Medical Assistant</span>
-    <button onclick="toggleChat()" id="chat-close-btn">X</button>
-  </div>
-  <div id="chat-messages"></div>
-  <div id="chat-input-row">
-    <input type="text" id="chat-input" placeholder="Ask a question...">
-    <button onclick="sendChat()">Send</button>
-  </div>
-</div>
-
 
 <script src="homework4.js"></script>
 </body>
